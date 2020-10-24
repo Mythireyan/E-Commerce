@@ -1,14 +1,14 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
+import SignInSignUpPage from './Pages/SignInSignUpPage/SignInSignUpPage';
 
 function App() {
   return (
     <div className="App">
-    <h1>This is HomePage</h1>
      {
-      // <Switch>
-      //   <Route path='/signin' component={SigninPage}/>
-      // </Switch> 
+      <Switch>
+        <Route path='/signin' component={SignInSignUpPage}/>
+      </Switch> 
      }      
     </div>
   );
