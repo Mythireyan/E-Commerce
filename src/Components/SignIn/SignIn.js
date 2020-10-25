@@ -1,5 +1,6 @@
 import React from 'react';
 import './SignIn.scss';
+import {signInWithGoogle} from '../../Firebase/Firebase';
 
 class SignIn extends React.Component {
 	constructor(props
@@ -31,10 +32,10 @@ class SignIn extends React.Component {
 
 	render(){
 		return(
-			<div>
+			<div className='sign-in'>
 				<h2>This is a signIn form</h2>
 				<h5>You could sigIn using email and password or using google account</h5>
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit} className='sign-in-form'>
 					<input 
 					name='email'
 					type="email" 
@@ -51,11 +52,11 @@ class SignIn extends React.Component {
 					required
 					/>
 					<label htmlFor="">Password</label>
-					<input type="submit" value='submit form'/>
+					<button type='submit'>SignIn</button>
+					<button onClick={signInWithGoogle}>SignInWithGoogle</button>
 				</form>
 			</div>
 			)
 	} 
 };
-
 export default SignIn;
