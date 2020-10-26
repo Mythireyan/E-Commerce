@@ -1,10 +1,10 @@
 import React from 'react';
 import './SignIn.scss';
 import {signInWithGoogle} from '../../Firebase/Firebase';
+import FormInput from '../FormInput/FormInput';
 
 class SignIn extends React.Component {
-	constructor(props
-		){
+	constructor(props){
 		super(props);
 
 		this.state = {
@@ -33,30 +33,32 @@ class SignIn extends React.Component {
 	render(){
 		return(
 			<div className='sign-in'>
-				<h2>This is a signIn form</h2>
-				<h5>You could sigIn using email and password or using google account</h5>
+				<h1 className='title'>SignIn Form</h1>
+				<p className='sub-title'>Already have an account or signIn With Google</p>
 				<form onSubmit={this.handleSubmit} className='sign-in-form'>
-					<input 
-					name='email'
-					type="email" 
-					value={this.state.email}
-					onChange={this.handleChange} 
-					required
+					<FormInput
+						name='email'
+						type="email" 
+						value={this.state.email}
+						handleChange={this.handleChange} 
+						required
+						label='Email'
 					/>
-					<label htmlFor="email">Email</label>
-					<input 
-					name='password'
-					type="password"
-					value={this.state.password}
-					onChange={this.handleChange}
-					required
-					/>
-					<label htmlFor="">Password</label>
-					<button type='submit'>SignIn</button>
-					<button onClick={signInWithGoogle}>SignInWithGoogle</button>
+					
+					<FormInput
+						name='password'
+						type="password"
+						value={this.state.password}
+						handleChange={this.handleChange}
+						label='Password'
+						required
+					/>		
 				</form>
 			</div>
 			)
 	} 
 };
 export default SignIn;
+
+// <button type='submit'>SignIn</button>
+// <button onClick={signInWithGoogle}>SignInWithGoogle</button>
