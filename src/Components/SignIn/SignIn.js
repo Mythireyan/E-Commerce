@@ -52,7 +52,8 @@ class SignIn extends React.Component {
 						handleChange={this.handleChange}
 						label='Password'
 						required
-					/>		
+					/>	
+					<input type="submit" onClick={signInWithGoogle}/>	
 				</form>
 			</div>
 			)
